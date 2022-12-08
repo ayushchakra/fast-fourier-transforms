@@ -16,13 +16,13 @@ def direct_dft_loops(signal):
 def direct_dft_matrices(signal):
     signal = np.array(signal)
     N = len(signal)
-    real_dft_matrix, imag_dft_matrix = w_matrix(N)
-    real_dft = real_dft_matrix@signal
-    imag_dft = imag_dft_matrix@signal
-    return np.dstack((real_dft, imag_dft))
+    dft_matrix = w_matrix(N)
+    dft = dft_matrix@signal
+    return dft
 
 if __name__ == "__main__":
+    dft = direct_dft_loops(test_signal_one[:1000])
     mat_start = time.perf_counter()
-    dft_2 = direct_dft_matrices(test_signal_one[:20000])
+    dft_2 = direct_dft_matrices(test_signal_one[:1000])
     mat_end = time.perf_counter()
-    print(mat_end-mat_start)
+    pdb.set_trace()
