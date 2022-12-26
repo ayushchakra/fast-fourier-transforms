@@ -31,14 +31,14 @@ def test_divide_and_conquer_matrices(signal):
     return end - start
 
 def run_tests(test_signal):
-    # dft_loop_perf_time = test_dft_loops(test_signal)
-    # print(f"Looped DFT Performance: {dft_loop_perf_time}s")
-    # dft_mat_perf_time = test_dft_matrices(test_signal)
-    # print(f"Matrix DFT Performance: {dft_mat_perf_time}s")
+    dft_loop_perf_time = test_dft_loops(test_signal)
+    print(f"Looped DFT Performance: {dft_loop_perf_time}s")
+    dft_mat_perf_time = test_dft_matrices(test_signal)
+    print(f"Matrix DFT Performance: {dft_mat_perf_time}s")
     fft_loop_perf_time = test_divide_and_conquer_loops(test_signal)
     print(f"Looped FFT Performance: {fft_loop_perf_time}s")
     fft_mat_perf_time = test_divide_and_conquer_matrices(test_signal)
     print(f"Matrix FFT Performance: {fft_mat_perf_time}s")
 
 if __name__ == "__main__":
-    run_tests(TEST_SIGNAL_ONE)
+    run_tests(TEST_SIGNAL_TWO)
